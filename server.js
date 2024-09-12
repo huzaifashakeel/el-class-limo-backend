@@ -13,6 +13,8 @@ app.use(cors({
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 }));
+
+app.options('*', cors()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
