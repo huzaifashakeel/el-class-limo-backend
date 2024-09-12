@@ -9,8 +9,10 @@ const port = process.env.PORT || 2000;
 
 // Middleware
 app.use(cors({
-    origin: '*', // or restrict to specific domain e.g. 'https://your-frontend.com'
-  }));
+    origin: '*', // Allow all origins or specify the allowed domains
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
